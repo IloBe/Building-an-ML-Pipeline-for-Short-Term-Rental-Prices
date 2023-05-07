@@ -1,7 +1,20 @@
+#!/usr/bin/env python
+
+"""
+Implements the fixture decorators for tests.
+"""
+
+###############
+# IMPORTS
+###############
+
 import pytest
 import pandas as pd
 import wandb
 
+###############
+# CODING
+###############
 
 def pytest_addoption(parser):
     parser.addoption("--csv", action="store")
@@ -52,6 +65,7 @@ def kl_threshold(request):
 
     return float(kl_threshold)
 
+
 @pytest.fixture(scope='session')
 def min_price(request):
     min_price = request.config.option.min_price
@@ -60,6 +74,7 @@ def min_price(request):
         pytest.fail("You must provide min_price")
 
     return float(min_price)
+
 
 @pytest.fixture(scope='session')
 def max_price(request):
