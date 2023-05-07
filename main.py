@@ -16,7 +16,7 @@ _steps = [
     # NOTE: We do not include this in the steps so it is not run by mistake.
     # You first need to promote a model export to "prod" before you can run this,
     # then you need to run this step explicitly
-    # "test_regression_model"
+    "test_regression_model"
 ]
 
 
@@ -111,15 +111,15 @@ def go(config: DictConfig):
             with open(rf_config, "w+") as fp:
                 json.dump(dict(config["modeling"]["random_forest"].items()), fp)  # DO NOT TOUCH
 
-            # NOTE: use the rf_config we just created as the rf_config parameter for the train_random_forest
-            # step                
+            # NOTE: use the rf_config we just created as the rf_config parameter for 
+            # the train_random_forest step                
             _ = mlflow.run(
                 os.path.join(root_path, "src", "train_random_forest"),
                     "main",
                     parameters={
                         "trainval_artifact": "nyc_airbnb/trainval_data.csv:latest",
                         "val_size": config['modeling']['val_size'],
-                        "random_state": config['modeling']['random_state'],
+                        "random_seed": config['modeling']['random_seed'],
                         "stratify_by": config['modeling']['stratify_by'],
                         "rf_config": rf_config,
                         "max_tfidf_features": config['modeling']['max_tfidf_features'],
