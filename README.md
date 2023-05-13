@@ -89,10 +89,16 @@ Then we select the best performing model for production, which is in W&B the one
 - **step 6** finally tests the best performing RF regression model for production against a test set.
 
 ### Running the entire pipeline or just a selection of steps
-In order to run the pipeline, you need to be in the root of the starter kit. The following command will run the entire pipeline.:
+In order to run the pipeline, you need to be in the root of the starter kit. The following command will run the entire pipeline:
 
 ```bash
 >  mlflow run .
+```
+or by using the specific etl file on your local repository CLI
+
+```bash
+>  git pull origin master
+>  mlflow run . -P hydra_options="etl.sample='sample2.csv'"
 ```
 
 When developing it is useful to be able to run one step at the time. Say you want to run only
