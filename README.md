@@ -4,6 +4,7 @@
 [image2]: ./images/AP_PA_orientation_small.PNG "Orientation:"
 
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
+## Business Use Case
 We are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. We need to estimate the typical price for a given property based 
 on the price of similar properties. Our company receives new data in bulk every week. The model needs 
@@ -11,11 +12,14 @@ to be retrained with the same cadence, necessitating an end-to-end pipeline that
 
 This task is part of the second project of the [MLOps](https://www.udacity.com/course/machine-learning-dev-ops-engineer-nanodegree--nd0821) Udacity course.
 
-Technically, the experiment results and artifacts are created with _Mlflow_ and _Hydra_ and stored on _Weights&Biases_ on the following [project](https://wandb.ai/ilo/nyc_airbnb/overview).
+## Technically
+The experiment results and artifacts are created with _Python 3_, _Mlflow_ and _Hydra_ and stored on _Weights&Biases_ in the following [project](https://wandb.ai/ilo/nyc_airbnb/overview).
 
-Note:<br>
-- We are using the former _pandas profiling_ library for exploratory data analysis (EDA).
-- We create an end-to-end pipeline with simple data preprocessing, doing some cleaning, and a using a random forest regression model with simple hyperparameter tuning. Both could be improved, getting better prediction results.
+**Note:**<br>
+Here are some general information given by the project settings.
+- The basic dependencies given by the Udacity fork are not usable, because MLflow and Hydra need newer library versions to be usable. The associated files have been changed accordingly.
+- We are using the former _pandas profiling_ library for exploratory data analysis (EDA) which is not up-to-date.
+- We create an end-to-end pipeline with simple data preprocessing, doing some cleaning, and are using a random forest regression model with simple hyperparameter tuning. Both could be improved, getting better prediction results.
 
 On his [blog](https://neptune.ai/blog/mlops-architecture-guide) post Stephen Oladele showed a simple workflow diagram regarding the specific parts to do.
 
