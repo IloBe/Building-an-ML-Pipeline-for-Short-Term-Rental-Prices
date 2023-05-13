@@ -1,10 +1,12 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
-You are working for a property management company renting rooms and properties for short periods of 
-time on various rental platforms. You need to estimate the typical price for a given property based 
-on the price of similar properties. Your company receives new data in bulk every week. The model needs 
+We are working for a property management company renting rooms and properties for short periods of 
+time on various rental platforms. We need to estimate the typical price for a given property based 
+on the price of similar properties. Our company receives new data in bulk every week. The model needs 
 to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
 
-In this project you will build such a pipeline.
+This task is part of the second project of the [MLOps](https://www.udacity.com/course/machine-learning-dev-ops-engineer-nanodegree--nd0821) Udacity course.
+
+Technically, the experiment results and artifacts are created with _Mlflow_ and _Hydra_ and stored on _Weights&Biases_ on the following [project](https://wandb.ai/ilo/nyc_airbnb/overview). We create an end-to-end pipeline with simple data preprocessing, doing some cleaning, and a using a random forest regression model with simple hyperparameter tuning. Both could be improved, getting better prediction results.
 
 ## Table of contents
 
