@@ -115,10 +115,12 @@ The parameters that the steps require are delivered in their `MLproject` file.
 
 ### Structure details
 So, finally the following structure exists:
+
 ![Project structure:][image2]
 
 ### Visualize the pipeline
 In W&B in the Artifacts section, we get the following representation of our pipeline.
+
 ![End-to-end pipeline:][image3]
 
 ### Project releases
