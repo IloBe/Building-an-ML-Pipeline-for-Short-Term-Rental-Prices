@@ -19,7 +19,10 @@ Here are some general information given by the project settings.
 There the best found model is tagged for production. Its hyperparameters are used as default values of the overall configuration file ``config.yaml`` which is stored in the root directory and read by the ``main.py`` file only. We will use Hydra to manage this configuration file via CLI.
 - The basic dependencies given by the Udacity fork are not usable, because MLflow and Hydra need newer library versions to be usable. The associated files have been changed accordingly.
 - We are using the former _pandas profiling_ library for exploratory data analysis (EDA) which is not up-to-date.
-- We create an end-to-end pipeline with simple data preprocessing, doing some cleaning, and are using a random forest regression model with simple hyperparameter tuning. Both could be improved, getting better prediction results.
+- We create an end-to-end pipeline with simple data preprocessing, doing some cleaning, and are using a random forest regression model with simple hyperparameter tuning. Both could be improved, getting better prediction results. For example, other models can be used for prediction, like<br>
+-- Ridge regressor: Linear least squares with l2 regularization<br>
+-- SVM regressor: Support Vector regression with RBF kernel<br>
+-- LightGBM regressor: Constructing a gradient boosting model using tree-based learning algorithms.
 
 On his [blog](https://neptune.ai/blog/mlops-architecture-guide) post Stephen Oladele showed a simple workflow diagram regarding the specific parts to do.
 
